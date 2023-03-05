@@ -1,0 +1,11 @@
+@font-face {
+    font-family: "Noto Sans";
+    src: local("Noto Sans"),
+     url("../src/fonts/Noto_Sans/NotoSans-Regular.ttf");
+    
+    }
+
+body {
+    font-family: "Noto Sans", sans-serif;
+}
+
