@@ -15,6 +15,7 @@ import {
 import { React,useState,useEffect } from 'react';
 import Context from './components/Context'
 import Navbar from './components/Navbar';
+import Navbar1 from './components/Navbar1';
 import Footer from './components/Footer';
 import { ReactNotifications } from 'react-notifications-component'
 import 'react-notifications-component/dist/theme.css'
@@ -25,7 +26,6 @@ import { Store } from 'react-notifications-component';
 
 export default function App() {
 
-  console.log(process.env,'process env');
 
   const [loggedIn, setLoggedIn] = useState(!!sessionStorage.username) //para saber si está logeado o no
   const [productsCart,setProductsCart] = useState(sessionStorage.cart ?? []) //para saber si
@@ -224,7 +224,7 @@ export default function App() {
 <ReactNotifications />
     {loggedIn ? 
       <>
-      <Navbar />
+      <Navbar1 />
       <div>
         <BrowserRouter>
           <Routes>

@@ -90,7 +90,6 @@ function Register() {
           }else{
 
             password = SHA256(password).toString();
-            console.log(email, username, password);
             
             addDoc(usersDB, {email, username, password,nombre,apellidos}).then(() => {
               login(username,email)

@@ -4,7 +4,7 @@ import { db } from '../firebase-config.js';
 import { ref,onValue,push,update,remove} from 'firebase/database';
 import Context from '../components/Context'
 import { useContext } from 'react'
-import {BsFillPlusCircleFill} from 'react-icons/bs';
+import {BsFillPlusCircleFill,BsFillEyeFill} from 'react-icons/bs';
 import AllProducts from '../pages/AllProducts.js';
 
 
@@ -42,7 +42,6 @@ export default function Searcher(){
             products.map(product => (
                 product.nombre.toLowerCase().includes(text.toLowerCase()) ? productos.push(product) : null
             ))
-            console.log(productos);
             setResults(productos)
         }else{
             setResults([])
@@ -112,6 +111,9 @@ export default function Searcher(){
                                             <button  onClick={() => addToCart(product)} className="btn btn-xs btn-success text-white mb-0">
                                                 <BsFillPlusCircleFill  className="me-2" /> Añadir al carrito
                                             </button>
+                                            <a  href={`detail/${product.id}`} className="btn btn-xs btn-secondary text-dark mb-0">
+                                                <BsFillEyeFill  className="me-2" /> Ver
+                                            </a>
                                             </div>
                                         </div>
                                         </div>

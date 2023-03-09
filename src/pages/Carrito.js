@@ -38,10 +38,10 @@ function Carrito() {
                             <p className="lead fw-normal mb-2">{product.nombre}</p>
                           </div>
                           <div className="col-md-3 col-lg-3 col-xl-2 d-flex">
-                            <NumericInput value={product.quantity} onChange={(value) => refreshQty(product,value)} />
+                            <NumericInput className="form-control" value={product.quantity} onChange={(value) => refreshQty(product,value)} />
                           </div>
-                          <div className="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
-                            <h5 className="mb-0">{product.quantity * product.precio} €</h5>
+                          <div className="col-md-3 col-lg-3 col-xl-2 d-flex m-2">
+                            <h5>{product.quantity * product.precio} €</h5>
                           </div>
                           <div className="col-md-1 col-lg-1 col-xl-1 text-end text-danger">
                           <BsFillTrashFill size={30} onClick={ () => deleteToCart(product)}/>
